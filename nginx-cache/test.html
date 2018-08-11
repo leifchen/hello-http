@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Hello Nginx Cache, and data is:
+        <span id="data"></span>
+    </div>
+    <button id="button">Click Me</button>
+    <script>
+        var index = 0
+        document.getElementById('button').addEventListener('click', doRequest)
+
+        function doRequest() {
+            var data = document.getElementById('data')
+            data.innerText = ''
+            fetch('/data', {
+                headers: {
+                    'X-Test-Cache': index++
+                }
+            }).then(function (res) {
+                return res.text()
+            }).then(function (text) {
+                data.innerText = text;
+            })
+        }
+    </script>
+</body>
+
+</html>
