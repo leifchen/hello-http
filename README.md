@@ -12,7 +12,7 @@ CORS 是一个 W3C 标准，它允许浏览器向跨源(协议 + 域名 + 端口
 
 |配置属性 | 描述 |
 |--------|------|
-| `Access-Control-Allow-Origin: <origin> | *` | origin 参数的值指定了允许访问该资源的外域 URI。对于不需要携带身份凭证的请求，服务器可以指定该字段的值为通配符，表示允许来自所有域的请求 |
+| `Access-Control-Allow-Origin: <origin> \| *` | origin 参数的值指定了允许访问该资源的外域 URI。对于不需要携带身份凭证的请求，服务器可以指定该字段的值为通配符，表示允许来自所有域的请求 |
 | `Access-Control-Expose-Headers: <header-name>, <header-name>, ...` | 让服务器把允许浏览器访问的头放入白名单 |
 | `Access-Control-Max-Age: <delta-seconds>` | 表示请求的结果在多少秒内有效 |
 | `Access-Control-Allow-Methods: <method>[, <method>]*` | 表示实际请求所允许使用的 HTTP 方法 |
